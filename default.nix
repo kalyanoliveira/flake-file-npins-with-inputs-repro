@@ -5,4 +5,4 @@ let
   outputs-fn =
     inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 in
-with-inputs-fn sources runtime-overrides-fn outputs-fn
+with-inputs-fn sources [ ./npins/follows.nix runtime-overrides-fn ] outputs-fn
